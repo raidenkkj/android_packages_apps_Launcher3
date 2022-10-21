@@ -191,6 +191,9 @@ public abstract class SystemShortcut<T extends Context & ActivityContext> extend
 
         @Override
         public void onClick(View view) {
+            InfoBottomSheet cbs;
+            dismissTaskMenuView(mTarget);
+            Rect sourceBounds = mTarget.getViewBounds(view);
             try {
                 cbs = (InfoBottomSheet) mTarget.getLayoutInflater().inflate(
                         R.layout.app_info_bottom_sheet,
